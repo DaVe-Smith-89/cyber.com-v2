@@ -139,10 +139,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / 'frontend/build/static',
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     BASE_DIR / 'frontend/build/static',
+# ]
 
 STATIC_ROOT = BASE_DIR / 'frontend/build/static'
 
