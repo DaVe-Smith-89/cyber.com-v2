@@ -107,7 +107,7 @@ class App extends React.Component{
             } />
           <Route path='/tools/' element={
               <ToolView host={this.state.host} isLoading={this.state.isLoading} theme={this.state.theme}
-              user={this.state.user} tools={this.state.tools} />
+              user={this.state.user} tools={this.state.tools} setLoading={this.setLoadingForComponents} />
             } />
           <Route path='/ehi/' element={
               <EhiView host={this.state.host} isLoading={this.state.isLoading} theme={this.state.theme}

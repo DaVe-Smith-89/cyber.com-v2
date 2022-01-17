@@ -20,8 +20,12 @@ class Posts extends React.Component {
     }
 
     componentDidMount(){
+        this.props.setLoading(true)
         axios.get(this.props.host+"/api/web/posts/").then(data => {
             this.setState({posts: data.data})
+            this.props.setLoading(false)
+        }).catch(err => {
+            window.location.replace('/posts/')
         })
     }
 

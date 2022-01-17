@@ -27,7 +27,11 @@ def google_login(request):
 def auth(request):
     token = oauth.google.authorize_access_token(request)
     userData = oauth.google.parse_id_token(request, token)
-    if not get_object_or_404(Account, email=userData.get('email')):
+    try:
+        user = Account.objects.get(email=userData.get('email'))
+    except:
+        user = False
+    if not user:
         user = Account(first_name=userData.get('given_name'), last_name=userData.get('family_name'), userName=str(userData.get('given_name') + ' ' + userData.get('family_name')),
                     email=userData.get('email'), userImage=userData.get('picture'), extra_data=userData)
         user.set_unusable_password()
