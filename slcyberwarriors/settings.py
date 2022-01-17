@@ -144,6 +144,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'frontend/build/static',
 ]
 
+STATIC_ROOT = BASE_DIR / 'frontend/build/static'
+
 STATIC_URL = 'static/'
 
 # Default primary key field type
