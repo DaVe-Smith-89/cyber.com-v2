@@ -5,7 +5,7 @@
     "deploy": {
         "module": "slcyberwarriors.wsgi:application",
         "managetasks": [
-            
+            "collectstatic --noinput"
         ]
     }
 }
