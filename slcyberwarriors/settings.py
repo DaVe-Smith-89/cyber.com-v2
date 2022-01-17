@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k8(gl-9n-qtmc*c5^^_8$^gx!jv7zpm@38!qax@_aa4msje(*)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['slcyberwarriors.com', 'www.slcyberwarriors.com', '127.0.0.1']
 
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -144,12 +145,11 @@ STATICFILES_DIRS = [
     BASE_DIR / 'frontend/build/static',
 ]
 
-<<<<<<< HEAD
-=======
-STATIC_ROOT = BASE_DIR / "web/static/"
+STATIC_URL = '/static/'
 
->>>>>>> b94b17018ad6b839fea03337606d278b3a13b4c8
-STATIC_URL = 'web/static/'
+STATIC_ROOT = BASE_DIR / 'web/static'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
