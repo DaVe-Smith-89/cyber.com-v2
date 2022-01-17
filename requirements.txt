@@ -29,8 +29,4 @@ sniffio==1.2.0
 sqlparse==0.4.2
 tzdata==2021.5
 urllib3==1.26.8
-<<<<<<< HEAD
 whitenoise==5.3.0
-=======
-whitenoise==5.3.0
->>>>>>> 49a3a188f06d5820a38ec8ab1bfbf65c3be8336d
