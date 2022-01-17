@@ -25,4 +25,4 @@ urlpatterns = [
     path('', include('main.urls'), name='main'),
     path('api/', include('rest_framework.urls')),
     path('api/web/', include('websiteapi.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
