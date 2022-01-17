@@ -15,7 +15,7 @@ class App extends React.Component{
     this.state = {
       theme: createTheme({palette: {mode: "dark"}}),
       isLoading: true,
-      host: 'http://127.0.0.1:8000',
+      host: '',
       user: null,
       lessons: null,
       news: null,
