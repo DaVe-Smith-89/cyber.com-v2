@@ -1,0 +1,30 @@
+
+{% extends "admin/base_site.html" %}
+
+{% block title %} Main - Dashboard {% endblock %}
+
+{% block content %}
+    <div class="container" style="display: flex; flex-wrap: wrap; text-align: center;">
+        {% if request.user.is_admin %}
+        <form action="{% url 'technewsApi' %}" method="post" class="card bg-light p-4 m-1" style="max-width: 400px;">
+            <center><legend>Refresh TechNews</legend></center>
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="password" name="data" id="data" placeholder="key" class="form-control" required>
+            </div>
+            <button class="btn btn-primary">Refresh Posts</button>
+        </form>
+        <form action="{% url 'ehiExchange' 1 %}" method="post" enctype="multipart/form-data" class="card bg-light p-4 m-1" style="max-width: 400px;">
+            <center><legend>Upload Ehi</legend></center>
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="file" name="file" id="file" class="form-control" required>
+            </div>
+            <button class="btn btn-primary">Upload Ehi</button>
+        </form>
+        {% else %}
+        <h2>You do not have permission to access this page!!!</h2>
+        <a class="btn btn-outline-primary" href='{% url "home" %}'>Back to Home</a>
+        {% endif %}
+    </div>
+{% endblock %}
