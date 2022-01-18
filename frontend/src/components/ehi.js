@@ -5,6 +5,8 @@ import Navigation from "./navigation"
 import { Paper, Container } from "@mui/material"
 import axios from "axios"
 import Ehi from "./loopcomponents/ehi"
+import Footer from "./footer"
+import LoginRequired from "./loginrequire"
 
 class EhiView extends React.Component {
     constructor(props){
@@ -35,6 +37,18 @@ class EhiView extends React.Component {
                 </ThemeProvider>
             )
         }
+
+        if(!this.props.user){
+            return(
+                <ThemeProvider theme={this.props.theme}>
+                    <Paper elevation={0}>
+                        <Navigation user={this.props.user} host={this.props.host} isLoading={this.props.isLoading} searchbarContent={this.props.searchbarContent}
+                        setCreatePostOpenedNav={this.setCreatePostOpenedForNav} setSearchbarContent={this.props.setSearchbarContent} />
+                        <LoginRequired />
+                    </Paper>
+                </ThemeProvider>
+            )
+        }
         
         return(
             <ThemeProvider theme={this.props.theme}>
@@ -45,6 +59,7 @@ class EhiView extends React.Component {
                             return(<Ehi ehi={ehi} host={this.props.host} />)
                         }) : null }
                     </Container>
+                    <Footer />
                 </Paper>
             </ThemeProvider>
         )
