@@ -25,14 +25,27 @@ class App extends React.Component{
     }
   }
 
+  loadScriptByURL = (id, url, callback) => {
+    const isScriptExist = document.getElementById(id);
+    if (!isScriptExist) {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = url;
+      script.id = id;
+      script.onload = console.log('script loaded!')
+      document.body.appendChild(script);
+    }
+  }
+
   componentDidMount(){
+    this.loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${this.state.reCaptchaKey}`)
     axios.get(this.state.host+'/api/web/user/').then(userdata => {
       this.setState({user: userdata.data})
       axios.get(this.state.host+'/api/web/lessons/').then(lessondata =>{
         this.setState({lessons: lessondata.data})
         axios.get(this.state.host+'/api/web/technews/').then(newsData => {
-        this.setState({news: newsData.data.articles})
-          this.setState({isLoading: false})
+          this.setState({news: newsData.data.articles})
+            this.setState({isLoading: false})
         })
       })
     }).catch(err => {

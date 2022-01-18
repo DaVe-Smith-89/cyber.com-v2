@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuItem, Avatar, Card, CardActions, DialogActions, CardContent, CardHeader, CardMedia, IconButton, Typography, Collapse, ListItemIcon, Backdrop, Dialog, DialogTitle, Button, DialogContentText, DialogContent } from "@mui/material";
+import { Menu, MenuItem, Avatar, Card, CardActions, DialogActions, CardContent, CardHeader, CardMedia, IconButton, Typography, Collapse, ListItemIcon, Backdrop, Dialog, DialogTitle, Button, DialogContentText, DialogContent, useMediaQuery, useTheme } from "@mui/material";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
@@ -27,6 +27,8 @@ function Post(props){
     const [isPostEditOpened, setPstEditOpened] = React.useState(false)
     const [isDeleteDialogOpened, setDeleteDialogOpened] = React.useState(false)
     const open = Boolean(anchorEl);
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -83,7 +85,7 @@ function Post(props){
 
     return(
         <>
-        <Card sx={{ maxWidth: 345 }} style={{"margin": "0.5rem"}}>
+        <Card sx={{ maxWidth: 365 }} style={{"margin": "0.5rem", width: isMobile ? "100%" : null}}>
             <CardHeader avatar={
                 <Avatar src={ post ? post.author.userImage : null } >
 

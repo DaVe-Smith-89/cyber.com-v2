@@ -8,7 +8,7 @@ function Lesson(props){
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
     return(
-        <Card style={{"margin": "0.5rem"}} sx={{ maxWidth: 345 }}>
+        <Card style={{"margin": "0.5rem"}} sx={{ maxWidth: 365 }}>
             <CardMedia component="iframe" height="140" image={ props.lesson ? props.lesson.url : props.host+"/static/img/logo.jpg"} />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">

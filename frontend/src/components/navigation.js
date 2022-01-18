@@ -188,9 +188,9 @@ const Navigation = (props) => {
     }
 
     const navigations = isMobile ? [
-      {name:'Login', active: props.user ? true : false, action: () => {}},
+      {name:'Login', active: props.user ? true : false, action: () => {window.location.replace('/login')}},
     ] : [
-      {name:'Login', active: props.user ? true : false, action: () => {}},
+      {name:'Login', active: props.user ? true : false, action: () => {window.location.replace('/login')}},
       {name:'Lessons', action: () => {navigate('/lessons/')}},
       {name:'Tools', action: () => {navigate('/tools/')}},
     ]

@@ -9,7 +9,7 @@ function News(props){
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
 
     return(
-        <Card style={{"margin": "0.5rem"}} sx={{ maxWidth: 345 }}>
+        <Card style={{"margin": "0.5rem", width: isMobile ? "100%" : null}} sx={{ maxWidth: 365 }}>
             <CardMedia component="img" height="140" image={ props.News ? props.News.urlToImage : props.host+'/static/img/logo.jpg' } />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Avatar, IconButton, Menu, MenuItem, ListItemIcon, CardActions, Collapse, Typography, CardMedia } from "@mui/material";
+import { Card, CardContent, CardHeader, Avatar, IconButton, Menu, MenuItem, ListItemIcon, CardActions, Collapse, Typography, CardMedia, useMediaQuery, useTheme } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -23,6 +23,8 @@ function Tool(props){
     const [isToolEditOpened, setToolEditOpened] = React.useState(false)
     const [isDeleteDialogOpened, setDeleteDialogOpened] = React.useState(false)
     const open = Boolean(anchorEl);
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
 
     const handleClose = () => {
         setAnchorEl(null);
@@ -74,7 +76,7 @@ function Tool(props){
     }
 
     return(
-        <Card sx={{ maxWidth: 345 }} style={{"margin": "0.5rem"}}>
+        <Card sx={{ maxWidth: 365 }} style={{"margin": "0.5rem", width: isMobile ? "100%" : null }}>
             <CardHeader avatar={
                 <Avatar src={ props.tool ? props.tool.author.userImage : null } />}
                 action={ props.tool ? toolOption() : null }
