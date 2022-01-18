@@ -52,9 +52,12 @@ class LessonApiView(APIView):
 class PostsApiView(APIView):
     serializer_class = PostSerializer
     def get(self, request, *args, **kwargs):
-        posts = Post.objects.all()
-        serializer = PostSerializer(posts, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            posts = Post.objects.all()
+            serializer = PostSerializer(posts, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -79,9 +82,12 @@ class PostsApiView(APIView):
 class PostApiView(APIView):
     serializer_class = PostSerializer
     def get(self, request, primary_key, *args, **kwargs):
-        post = get_object_or_404(Post, id=primary_key)
-        serializer = PostSerializer(post, many=False)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            post = get_object_or_404(Post, id=primary_key)
+            serializer = PostSerializer(post, many=False)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
     def post(self, request, primary_key, *args, **kwargs):
         if request.user.is_authenticated:
@@ -113,9 +119,12 @@ class PostApiView(APIView):
 class ToolsApiView(APIView):
     serializer_class = ToolSerializer
     def get(self, request, *args, **kwargs):
-        tools = Tool.objects.all()
-        serializer = ToolSerializer(tools, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            tools = Tool.objects.all()
+            serializer = ToolSerializer(tools, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -132,9 +141,12 @@ class ToolsApiView(APIView):
 class ToolApiView(APIView):
     serializer_class = ToolSerializer
     def get(self, request, primary_key, *args, **kwargs):
-        tool = get_object_or_404(Tool, id=primary_key)
-        serializer = ToolSerializer(tool, many=False)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            tool = get_object_or_404(Tool, id=primary_key)
+            serializer = ToolSerializer(tool, many=False)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
     def post(self, request, primary_key, *args, **kwargs):
         if request.user.is_authenticated:
@@ -177,8 +189,11 @@ class TechNewsView(APIView):
 class EhiApiView(APIView):
     serializer_class = Ehi
     def get(self, request, *args, **kwargs):
-        ehis = Ehi.objects.all()
-        serializer = EhiSerializer(ehis, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            ehis = Ehi.objects.all()
+            serializer = EhiSerializer(ehis, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
 
