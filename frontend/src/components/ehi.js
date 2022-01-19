@@ -52,9 +52,9 @@ class EhiView extends React.Component {
         
         return(
             <ThemeProvider theme={this.props.theme}>
-                <Paper elevation={0} style={{height: "100vh"}}>
+                <Paper elevation={0}>
                     <Navigation user={this.props.user} host={this.props.host} isLoading={this.props.isLoading} />
-                    <Container style={{display: "flex", flexDirection: "row", flexWrap: "wrap", paddingTop: "5rem"}}>
+                    <Container style={{display: "flex", flexDirection: "row", flexWrap: "wrap", paddingTop: "5rem", justifyContent: "center"}}>
                         { this.state.ehis ? this.state.ehis.map(ehi => {
                             return(<Ehi ehi={ehi} host={this.props.host} />)
                         }) : null }
