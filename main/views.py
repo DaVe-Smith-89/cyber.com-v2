@@ -53,7 +53,7 @@ class EhiView(View):
     def get(self, request, primary_key, *args, **kwargs):
         ehi = get_object_or_404(Ehi, id=primary_key)
         resp = HttpResponse(ehi.data, content_type="application/vnd.ms-excel")
-        resp['Content-Disposition'] = 'inline; filename=' + ehi.name
+        resp['Content-Disposition'] = "attachment; filename=\"download.ehi\""
         return resp
 
     def post(self, request, *args, **kwargs):
