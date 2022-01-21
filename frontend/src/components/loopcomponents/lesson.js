@@ -14,7 +14,7 @@ function Lesson(props){
                 <Typography gutterBottom variant="h6" component="div">
                     { props.lesson ? props.lesson.title : "loading..." }
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography paragraph style={{whiteSpace: "pre-wrap"}}>
                     { props.lesson ? props.lesson.content : 'loading...'}
                 </Typography>
             </CardContent>

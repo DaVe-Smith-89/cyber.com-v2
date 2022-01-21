@@ -106,7 +106,7 @@ function Post(props){
             </CardContent>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-                    <Typography paragraph>
+                    <Typography paragraph style={{whiteSpace: "pre-wrap"}}>
                         { post ? post.content : 'loading...' }
                     </Typography>
                 </CardContent>
