@@ -201,7 +201,7 @@ const Navigation = (props) => {
       {'name': 'About', 'icon': <InfoIcon />, 'action': () => {navigate('/about/'); setNavOpened(!isNavOpened)}},
       {'name': 'Tech News', 'icon': <NewspaperIcon />, 'action': () => {navigate('/technews/'); setNavOpened(!isNavOpened)}},
       {'name': 'posts', 'icon': <EmailIcon />, 'action': () => {navigate('/posts/'); setNavOpened(!isNavOpened)}},
-      {'name': 'Developer', 'icon': <CodeIcon />, 'action': () => window.location.replace('https://davesmith.ml/')},
+      {'name': 'Developer', 'icon': <CodeIcon />, 'action': () => window.location.replace('https://github.com/DaVe-Smith-89')},
       {'name': props.user ? 'logout' : 'login', 'icon': props.user ? <LogoutIcon /> : <LoginIcon />, 'action': props.user ? () => {window.location.replace('/logout')} : () => {window.location.replace('/login')} },
     ]
 
