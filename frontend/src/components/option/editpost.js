@@ -55,7 +55,7 @@ function EditPost(props){
                 <TextField  onChange={(event) => {setTitleChanged(true); setTitle(event.target.value)}} value={ isTitleChanged ? title : props.post ? props.post.title : 'loading...' } variant='standard' helperText="Post Title" />
                 <TextField  onChange={(event) => {setImageChanged(true); setImage(event.target.value)}} value={ isImageChanged ? image : props.post ? props.post.image : 'loading...' } variant='standard' helperText="Post Image" />
                 <TextField  onChange={(event) => {setDescriptionChanged(true); setDescription(event.target.value)}} value={ isDescriptionChanged ? description : props.post ? props.post.description : 'loading...' } variant='standard' helperText="Post Description" />
-                <TextField  onChange={(event) => {setContentChanged(true); setContent(event.target.value)}} value={ isContentChanged ? content : props.post ? props.post.content : 'loading...' } variant='standard' helperText="Post Content" />
+                <TextField  onChange={(event) => {setContentChanged(true); setContent(event.target.value)}} value={ isContentChanged ? content : props.post ? props.post.content : 'loading...' } variant='standard' helperText="Post Content" multiline rows={2} />
                 <div style={{"marginLeft": "5rem"}}>
                     <Button color="inherit" variant='text' onClick={() => {props.closeBackDrop(false); props.refreshAll()} }>close</Button>
                     <Button color="success" variant='contained' onClick={() => {

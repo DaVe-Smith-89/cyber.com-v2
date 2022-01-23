@@ -47,8 +47,8 @@ export default function Home(props) {
               </p>
             </div>
             <div>
-              <a href='' style={{"textDecoration": "none", "marginRight": "1rem"}}><Button variant='contained'>Subscribe us</Button></a>
-              <a href='' style={{"textDecoration": "none"}}><Button variant='outlined'>Join us</Button></a>
+              <a target="_blank" href='https://www.youtube.com/channel/UCOC4YlK-7mb5jIbCRcuijvQ' style={{"textDecoration": "none", "marginRight": "1rem"}}><Button variant='contained'>Subscribe us</Button></a>
+              <a target="_blank" href='https://t.me/by_sstp' style={{"textDecoration": "none"}}><Button variant='outlined'>Join us</Button></a>
             </div>
           </div>
         </Container>

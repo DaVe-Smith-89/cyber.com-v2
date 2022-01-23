@@ -68,7 +68,7 @@ function CreatePost(props) {
                         <TextField value={title} onChange={(event) => {setTitle(event.target.value)}} variant="standard" helperText="Post Title" />
                         <TextField value={description} onChange={(event) => {setDescription(event.target.value)}} variant="standard" helperText="Post Description" />
                         <TextField value={image} onChange={(event) => {setImage(event.target.value)}} variant="standard" helperText="Post Image url" />
-                        <TextField value={content} onChange={(event) => {setContent(event.target.value)}} variant="standard" helperText="Post Content" />
+                        <TextField value={content} onChange={(event) => {setContent(event.target.value)}} variant="standard" helperText="Post Content"  multiline rows={2} />
                     </CardContent>
                     <CardActionArea style={{"display": "flex", "justifyContent": "flex-end"}}>
                         <Button variant="text" onClick={() => {props.refreshAll(); props.setCreatePostOpened(false)}}>close</Button>

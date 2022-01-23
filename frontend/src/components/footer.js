@@ -23,13 +23,13 @@ function Footer(props){
                         <Link to="/lessons" style={anchorStyle} >Lessons</Link><br/>
                         <Link to="/technews" style={anchorStyle} >Tech News</Link><br/>
                         <Link to="/posts" style={anchorStyle} >Posts</Link><br/>
-                        <a style={anchorStyle} href="https://davesmith.ml/contact">Contact Developer</a>
+                        <a target="_blank" style={anchorStyle} href="https://t.me/Dave_Smith_89">Contact Developer</a>
                     </div>
                     <div style={{"width": "50%"}}>
-                        <a href="" style={anchorStyle}><FacebookOutlinedIcon /> FaceBook</a><br />
-                        <a href="" style={anchorStyle}><YouTubeIcon /> Youtube</a><br />
-                        <a href="" style={anchorStyle}><FacebookOutlinedIcon /> FaceBook</a><br />
-                        <a href="" style={anchorStyle}><TelegramIcon /> Telegram</a><br />
+                        <a target="_blank" href="https://www.facebook.com/groups/424580708746052/" style={anchorStyle}><FacebookOutlinedIcon /> FaceBook Group</a><br />
+                        <a target="_blank" href="https://www.youtube.com/channel/UCOC4YlK-7mb5jIbCRcuijvQ" style={anchorStyle}><YouTubeIcon /> Youtube</a><br />
+                        <a target="_blank" href="https://www.facebook.com/cyber.warrior.page/" style={anchorStyle}><FacebookOutlinedIcon /> FaceBook Page</a><br />
+                        <a target="_blank" href="https://t.me/by_sstp" style={anchorStyle}><TelegramIcon /> Telegram</a><br />
                         <p>
                         <IconButton onClick={() => setGithubOpened(true)} style={{"margin": "0", "padding": "0"}}><GitHubIcon /></IconButton>
                         <Button onClick={() => setGithubOpened(true)} color="inherit">Github</Button>
