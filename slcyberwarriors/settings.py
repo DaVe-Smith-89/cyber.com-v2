@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k8(gl-9n-qtmc*c5^^_8$^gx!jv7zpm@38!qax@_aa4msje(*)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['slcyberwarriors.com', 'www.slcyberwarriors.ml', 'slcyberwarriors.ml' 'www.slcyberwarriors.com', '127.0.0.1']
+ALLOWED_HOSTS = ['slcyberwarriors.com', 'https://app-b9c16681-e133-4ea7-b5cc-8c31eaf50e0f.cleverapps.io', 'www.slcyberwarriors.com', '127.0.0.1']
 
 
 # Application definition
@@ -161,7 +161,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", "slcyberwarriors.ml", "www.slcyberwarriors.ml"
+    "http://localhost:3000", "https://app-b9c16681-e133-4ea7-b5cc-8c31eaf50e0f.cleverapps.io/"
 ]
 
 REST_FRAMEWORK = {
