@@ -161,7 +161,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", "https://app-b9c16681-e133-4ea7-b5cc-8c31eaf50e0f.cleverapps.io/"
+    "http://localhost:3000", "https://app-b9c16681-e133-4ea7-b5cc-8c31eaf50e0f.cleverapps.io"
 ]
 
 REST_FRAMEWORK = {
