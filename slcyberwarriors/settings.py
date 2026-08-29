@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k8(gl-9n-qtmc*c5^^_8$^gx!jv7zpm@38!qax@_aa4msje(*)'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -98,8 +98,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bpqsbwfmtc58t7brxmnr',
-        'USER': 'umuygmcyg1nmwly2bmy9',
-        'PASSWORD': 'UVpNml8wGe2DepzSvwyl',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'bpqsbwfmtc58t7brxmnr-postgresql.services.clever-cloud.com',
         'PORT': '5432',
     }
@@ -171,14 +171,14 @@ REST_FRAMEWORK = {
     ]
 }
 
-DRF_RECAPTCHA_SECRET_KEY = "6LekGdsdAAAAALZz9taDxDP_fnMMKtjsXmWtZntO"
+DRF_RECAPTCHA_SECRET_KEY = ""
 
 SITE_ID = 1
 
 # AUTHLIB CLIENTS
 AUTHLIB_OAUTH_CLIENTS = {
     'google': {
-        'client_id': '1020596954536-rg1a2ks6bjai7pa1pba4bmgqfc3rptsq.apps.googleusercontent.com',
-        'client_secret': '3xf8z81HUddaTkyqZBXJm9PG',
+        'client_id': '',
+        'client_secret': '',
     }
 }
